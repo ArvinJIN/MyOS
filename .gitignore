@@ -1,3 +1,6 @@
 *.iso
+*.img
+*.elf
 isodir
 sysroot
+.vscode

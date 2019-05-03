@@ -7,4 +7,7 @@ done
 
 rm -rf sysroot
 rm -rf isodir
-rm -rf myos.iso
+rm -rf *.iso
+rm -rf *.elf
+rm -rf *.img
+

@@ -1,5 +1,3 @@
-#!/bin/sh
-set -e
 . ./build.sh
 mkdir -p isodir
 mkdir -p isodir/boot
@@ -13,6 +11,6 @@ menuentry "myos" {
 EOF
 
 grub-mkrescue -o myos.iso isodir
+dd if=myos.iso of=myos.img conv=notrunc
 
-dd if=myos.iso of=c.img conv=notrunc
-
+qemu-system-$(./target-triplet-to-arch.sh $HOST) -S -kernel myos.img -m 512
